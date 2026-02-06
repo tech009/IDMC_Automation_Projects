@@ -45,7 +45,7 @@ Before running the script, ensure the following:
 3. **User Inputs:**
    - **IDMC URL:** Base/Login URL of the IDMC platform.
    - **Username & Password:** Credentials for authentication.
-   - **Platform:** Target platform identifier.
+   - **Platform:** Target platform identifier (linux64 only)
    - **Installation Directory (optional):** Directory for agent installation (defaults to user directory).
 
 4. **Permissions:**
@@ -64,4 +64,5 @@ Before running the script, ensure the following:
 2. **Run the Script:**
 
    ```bash
-   ./install_agent.sh -u <IDMC_URL> -n <Username> -p <Password> -f <Platform> [-d <Installation Directory>]
+   ./install_agent.sh -u <IDMC_URL> -n <Username> -p <Password> -f "linux64" [-d <Installation Directory>]
+
