@@ -1,0 +1,11 @@
+﻿OS Version,Bit,Agent Core,CDI,CAI,API Manager (Microgateway),B2B GW,CIH,OI (Secure Agent Monitoring),CTDM,Cloud Data Quality,Advanced Data Integration (CDI-E),CMI-Streaming,CMI-Databases,CMI-Applications,CMI-Files,CDI-PC,PC2CDI Modernization Service,Cloud Data Validation,CDGC,API Center,IDIQ
+RedHat 8.x ,64 bit,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,NA,NA
+RedHat 9.x ,64 bit,S,S,S,NS,S,S,S,NS,S,S,S,S,S,S,S,S,S,S,NA,NA
+Oracle Linux 8 (UEK),64 bit,S,S,S,S,S,S,S,S,S,S,S,S,S,S,NS,NS,S,S,NA,NA
+SuSE 12 SP5,64 bit,S,S,S,NS,S,S,S,S,S,S1,S,S,S,S,S,S,NA,S,NA,NA
+SUSE 15 SP4,64 bit,S,S,S,NS,NS,S,S,NS,S,S1,S,S,S,S,S,S,NA,S,NA,NA
+SUSE 15 SP6,64 bit,S,S,S,NS,NS,NS,S,NS,S,S,NS,NS,NS,NS,NS,NS,NS,NS,NA,NA
+SUSE 15 SP7,64 bit,S,S,S,NS,S,NS,NS,NS,S,NS,S,S,S,S,NS,NS,NS,NS,NA,NA
+Ubuntu 22.04,64 bit,S,S,S,NS,S,S,S,S,S,S1,S,S,S,S,NS,NS,NA,S,NA,NA
+Ubuntu 20.04,64 bit,S,S,S,NS,S,NS,S,NS,S,NS,S,NS,NS,NS,NS,NS,NS,S,NA,NA
+Amazon Linux 2023,64 bit,S,S,S,NS,NS,NS,NS,NS,S,NS,NS,S,NS,NS,NS,NS,NS,NS,NA,NA
