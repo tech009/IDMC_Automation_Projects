@@ -28,8 +28,10 @@ A simple and portable shell script to check if the current Linux operating syste
 
 1.  **Clone the repository or download the files:**
     ```bash
-    git clone <your-repository-url>
-    cd <your-repository-directory>
+    git clone --sparse https://github.com/tech009/IDMC_Automation_Projects.git
+    cd IDMC_AGENT/IDMCSecureAgentOSValidator
+    git sparse-checkout set IDMC_AGENT/IDMCSecureAgentOSValidator
+    git checkout main 
     ```
     Alternatively, manually download `check_compatibility.sh` and `compatibilitySheet.csv` into the same directory.
 
