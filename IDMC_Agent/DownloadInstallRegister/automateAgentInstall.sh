@@ -66,6 +66,12 @@ echo "Installation Directory: $INSTALL_DIR"
 # Create installation directory if not exists
 mkdir -p "$INSTALL_DIR"
 
+#Setting up IATEMPDIR
+IATEMPDIR=$INSTALL_DIR/temp
+mkdir -p "$IATEMPDIR"
+echo "IATEMPDIR set to $IATEMPDIR"
+export IATEMPDIR="$IATEMPDIR"
+
 # 1. Login API POST call to get icsessionID and serverUrl
 LOGIN_RESPONSE=$(curl -s -X POST "$IDMC_URL/ma/api/v2/user/login" \
   -H "Content-Type: application/json" \
