@@ -67,11 +67,13 @@ echo "Installation Directory: $INSTALL_DIR"
 mkdir -p "$INSTALL_DIR"
 
 #Setting up IATEMPDIR
-IATEMPDIR=$INSTALL_DIR/temp
-mkdir -p "$IATEMPDIR"
-echo "IATEMPDIR set to $IATEMPDIR"
-export IATEMPDIR="$IATEMPDIR"
-
+if [[ -z "$IATEMPDIR" ]]; then
+  tempSet=true
+  IATEMPDIR=$INSTALL_DIR/temp
+  mkdir -p "$IATEMPDIR"
+  echo "IATEMPDIR not pre-set, setting to $IATEMPDIR for installation"
+  export IATEMPDIR="$IATEMPDIR"
+fi
 # 1. Login API POST call to get icsessionID and serverUrl
 LOGIN_RESPONSE=$(curl -s -X POST "$IDMC_URL/ma/api/v2/user/login" \
   -H "Content-Type: application/json" \
@@ -124,6 +126,11 @@ AGENTCORE_DIR="$INSTALL_DIR/apps/agentcore"
 cd "$AGENTCORE_DIR" || { echo "Agent core directory not found."; exit 1; }
 echo "Agent Instalation Complete!"
 
+# 5a. Cleaning and removing IATEMPDIR
+if [ "$tempSet" = true ]; then
+  echo "Clearing IATEMPDIR directory: $IATEMPDIR"
+  rm -rf "$IATEMPDIR"
+fi
 # 6. Start infaagent
 echo "Starting infaagent..."
 ./infaagent startup
