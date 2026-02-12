@@ -67,6 +67,8 @@ fi
 # Compare agentGroupId with runtime environment id
 if [[ "$agentGroupId" == "$id" ]]; then
   echo "Agent already part of same Group, terminating script now."
+  curl -s -X POST "$serverUrl/api/v2/user/logout" -H "icSessionId: $icSessionId"
+  echo "Logged out successfully."
   exit 0
 fi
 
@@ -103,3 +105,10 @@ if echo "$update_response" | jq -e 'select(."@type" == "error")' > /dev/null; th
 else
   echo "Re-Assignment Successful"
 fi
+
+# Step 8: Logout session for user.
+
+curl -s -X POST "$serverUrl/api/v2/user/logout" \
+  -H "icSessionId: $icSessionId"
+
+echo "Logged out successfully."
